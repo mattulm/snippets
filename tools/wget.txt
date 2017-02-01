@@ -1,0 +1,2 @@
+# Web Scraping
+wget -H -r --level=5 --restrict-file-names=windows --convert-links -e robots=off
