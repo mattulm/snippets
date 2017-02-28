@@ -1,0 +1,5 @@
+data = “[base64 to decode]"
+from base64 import b64decode
+import zlib
+decoded = zlib.decompress(b64decode(data), zlib.MAX_WBITS | 16)
+print decoded
