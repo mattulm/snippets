@@ -1,0 +1,1 @@
+for f in *.crdownload; do mv -- "$f" "${f%.crdownload}.zip"; done
