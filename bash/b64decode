@@ -1,0 +1,4 @@
+for i in $(cat textfile.of.domains.txt); do
+  echo $i | base64 -decode;
+  echo
+done
