@@ -1,0 +1,2 @@
+cat /dev/random | tr -dc _A-Z-a-z-0-9 | head -c1028
+# If you want to have more characters then change the count on the head function.
