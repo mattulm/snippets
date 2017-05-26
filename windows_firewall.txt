@@ -1,0 +1,8 @@
+What ports are open in my firewall:
+netsh advfirewall monitor show firewall rule name=all dir=in
+netsh advfirewall monitor show firewall rule name=all dir=out
+
+
+netsh advfirewall firewall add rule name="My Application" dir=in action=allow program="C:\MyApp\MyApp.exe" enable=yes remoteip=172.16.0.0/16,LocalSubnet profile=domain
+
+netsh advfirewall firewall add rule name="My Application" dir=in action=allow program="C:\MyApp\MyApp.exe" enable=yes remoteip=172.16.0.0/16,LocalSubnet profile=private

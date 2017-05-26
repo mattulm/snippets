@@ -1,3 +1,0 @@
-What ports are open in my firewall:
-netsh advfirewall monitor show firewall rule name=all dir=in
-netsh advfirewall monitor show firewall rule name=all dir=out
