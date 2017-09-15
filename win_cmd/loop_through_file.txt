@@ -1,0 +1,3 @@
+# loop through a file and ping the IP address:
+
+for /f %g in (list.txt) DO ping -a -n 1 %g >> results.txt
